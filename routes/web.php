@@ -21,8 +21,7 @@ Route::get('/', function () {
 
 Route::resource('/userForAdmin', UserController::class);
 Route::resource('/RestaurantForAdmin', RestaurantController::class);
-
-
+Route::resource('/restaurants', RestaurantController::class);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

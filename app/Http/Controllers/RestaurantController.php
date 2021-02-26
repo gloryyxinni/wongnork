@@ -58,7 +58,7 @@ class RestaurantController extends Controller
      * @param  \App\Restaurant  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Restaurant $restaurant )
+    public function show(Restaurant $restaurant)
     {
         return view('admin.RestaurantShow',compact('restaurant'));
     }
@@ -71,9 +71,10 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        $restaurant = Restaurant::find($restaurant);
-        return view('admin.RestaurantEdit',compact('restaurant'));
+        //$restaurant = Restaurant::find($restaurant);
+        return view('admin.RestaurantEdit',compact('restaurant')); 
     }
+
   
     /**
      * Update the specified resource in storage.

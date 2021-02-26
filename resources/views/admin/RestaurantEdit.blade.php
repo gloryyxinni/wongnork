@@ -22,8 +22,8 @@
             </ul>
         </div>
     @endif
-  
-    <form action="{{ route('RestaurantForAdmin.update',$restaurant->id) }}" method="POST">
+    
+    <form action="{{ route('RestaurantForAdmin.update',$restaurant->id)}}" method="POST">
         @csrf
         @method('PUT')
    
@@ -37,26 +37,25 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>location:</strong>
-                    <textarea class="form-control" style="height:280px" name="location" value="{{ $restaurant->location }}" placeholder="location"></textarea>
+                    <input type="text" name="location" value="{{ $restaurant->location }}"class="form-control" placeholder="location">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>open_close_time:</strong>
-                    <textarea class="form-control" style="height:280px" name="open_close_time" value="{{ $restaurant->open_close_time }}" placeholder="open_close_time"></textarea>
+                    <input type="text" name="open_close_time" value="{{ $restaurant->open_close_time }}"class="form-control" placeholder="open_close_time">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>picture:</strong>
-                    <textarea class="form-control" style="height:280px" name="picture" value="{{ $restaurant->picture }}" placeholder="picture"></textarea>
+                    <input type="text" name="picture" value="{{ $restaurant->picture }}"class="form-control" placeholder="picture">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Phonenumber:</strong>
-                    <textarea class="form-control" style="height:280px" name="phonenumber" value="{{ $restaurant->phonenumber }}" placeholder="phonenumber"></textarea>
-                </div>
+                    <input type="text" name="phonenumber" value="{{ $restaurant->phonenumber }}"class="form-control" placeholder="phonenumber">
             </div>   
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
@@ -64,4 +63,5 @@
         </div>
    
     </form>
+    
 @endsection

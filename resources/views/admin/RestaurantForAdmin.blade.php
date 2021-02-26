@@ -30,18 +30,19 @@
         </tr>
         @foreach ($restaurants as $restaurant)
         <tr>
-            
+            <td>{{ ++$i }}</td>
             <td>{{ $restaurant->name }}</td>
             <td>{{ $restaurant->location }}</td>
             <td>{{ $restaurant->open_close_time }}</td>
             <td>{{ $restaurant->picture }}</td>
             <td>{{ $restaurant->phonenumber }}</td>
             <td>
-                <form action="{{ route('RestaurantForAdmin.destroy',[$restaurant->id]) }}" method="POST">
+                <form action="{{ route('restaurants.destroy',$restaurant->id) }}" method="POST">
+
    
-                    <a class="btn btn-info" href="{{ route('RestaurantForAdmin.show',[$restaurant->id]) }}">Show</a>
+                    <a class="btn btn-info" href="{{ route('restaurants.show',$restaurant->id) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('RestaurantForAdmin.edit',[$restaurant->id]) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('restaurants.edit',$restaurant->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
