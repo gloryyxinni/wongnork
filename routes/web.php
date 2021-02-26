@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RestaurantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,10 @@ Route::get('/', function () {
 });
 
 Route::resource('/userForAdmin', UserController::class);
+Route::resource('/RestaurantForAdmin', RestaurantController::class);
+
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
