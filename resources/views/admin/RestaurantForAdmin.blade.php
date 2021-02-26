@@ -30,7 +30,7 @@
         </tr>
         @foreach ($restaurants as $restaurant)
         <tr>
-            
+            <td>{{ ++$i }}</td>
             <td>{{ $restaurant->name }}</td>
             <td>{{ $restaurant->location }}</td>
             <td>{{ $restaurant->open_close_time }}</td>
