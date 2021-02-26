@@ -49,7 +49,7 @@ class RestaurantController extends Controller
         Restaurant::create($request->all());
    
         return redirect()->route('RestaurantForAdmin.index')
-                        ->with('success','Blog created successfully.');
+                        ->with('success','Restaurant created successfully.');
     }
    
     /**
@@ -96,7 +96,7 @@ class RestaurantController extends Controller
         $restaurant->update($request->all());
   
         return redirect()->route('RestaurantForAdmin.index')
-                        ->with('success','Blog updated successfully');
+                        ->with('success','Restaurant updated successfully');
     }
   
     /**
@@ -110,7 +110,7 @@ class RestaurantController extends Controller
         $restaurant->delete();
   
         return redirect()->route('RestaurantForAdmin.index')
-                        ->with('success','Blogs deleted successfully');
+                        ->with('success','Restaurant deleted successfully');
     }
 }
 
