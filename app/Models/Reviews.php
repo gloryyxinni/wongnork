@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reviews extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'User_id', 'Restaurant_id','Rating_Rating_id','Comment_Comment_id'
+    ];
 }
