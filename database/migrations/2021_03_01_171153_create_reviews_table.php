@@ -20,6 +20,7 @@ class CreateReviewsTable extends Migration
             $table->integer('Rating_Rating_id');
             $table->integer('Comment_Comment_id');
             $table->timestamps();
+            
         });
     }
 
