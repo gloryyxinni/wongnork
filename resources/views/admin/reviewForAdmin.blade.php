@@ -1,28 +1,21 @@
 @extends('admin.layout')
 
 @section('content')
-     <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Review list</h2>
-            </div>
-        </div>
-    </div>
-
+    <h1>Review List</h1>
+    <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
         </div>
-    @endif
-
+    @endif  
 
     <table class="table table-bordered">
         <tr>
+
             <th>User</th>
             <th>Restaurant</th>
             <th>Rating</th>
             <th>Comment</th>
-
 
         </tr>
         @foreach ($reviews as $review)
@@ -39,3 +32,4 @@
 
     {!! $reviews->links() !!}
 
+@endsection
