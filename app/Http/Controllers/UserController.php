@@ -14,9 +14,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::first()->paginate(5);
+        $users = User::paginate(5);
+    
         return view('admin.userForAdmin', compact('users'))
-        ->with('i', (request()->input('page',1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**

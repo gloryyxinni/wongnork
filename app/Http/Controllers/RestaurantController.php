@@ -17,7 +17,7 @@ class RestaurantController extends Controller
   
         return view('admin.RestaurantForAdmin',compact('restaurants'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
+    }  
    
     /**
      * Show the form for creating a new resource.
