@@ -29,6 +29,19 @@ class ReviewController extends Controller
         //
     }
    
+      /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Reviews
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Reviews $review)
+    {
+        $review->delete();
+  
+        return redirect()->route('reviews.index')
+                        ->with('success','Review deleted successfully');
+    }
    
     
 }
