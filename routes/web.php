@@ -21,9 +21,10 @@ Route::get('/', function () {
 });
 
 Route::resource('/userForAdmin', UserController::class);
-Route::resource('/RestaurantForAdmin', RestaurantController::class);
 Route::resource('/restaurants', RestaurantController::class);
-Route::resource('/reviews', ReviewController::class);
+
+Route::resource('/restaurantForAdmin', RestaurantController::class);
+Route::resource('/reviewForAdmin', ReviewController::class);
 
 
 
