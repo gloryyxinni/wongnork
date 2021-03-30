@@ -4,10 +4,10 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Create New Restaurant</h2>
+            <h1>Add New Restaurant</h1>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('RestaurantForAdmin.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('restaurantForAdmin.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
     </div>
 @endif
    
-<form action="{{ route('RestaurantForAdmin.store') }}" method="POST">
+<form action="{{ route('restaurantForAdmin.store') }}" method="POST">
     @csrf
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">

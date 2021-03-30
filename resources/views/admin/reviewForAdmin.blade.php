@@ -1,7 +1,7 @@
 @extends('admin.layout')
 
 @section('content')
-    <h1>Review List</h1>
+    <h1>Review Details</h1>
     <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -29,7 +29,7 @@
             <td>{{ $review->Comment_Comment_id }}</td>
             
             <td>
-                <form action="{{ route('reviews.destroy',$review->id) }}" method="POST">
+                <form action="{{ route('reviewForAdmin.destroy',$review->id) }}" method="POST">
 
                     @csrf
                     @method('DELETE')

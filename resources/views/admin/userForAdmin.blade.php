@@ -1,7 +1,7 @@
 @extends('admin.layout')
  
 @section('content')
-   <h1>User List</h1>
+   <h1>User Details</h1>
    <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">

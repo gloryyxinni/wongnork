@@ -15,7 +15,7 @@ class RestaurantController extends Controller
     {
         $restaurants = Restaurant::latest()->paginate(5);
   
-        return view('admin.RestaurantForAdmin',compact('restaurants'))
+        return view('admin.restaurantForAdmin',compact('restaurants'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }  
    
@@ -26,7 +26,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.RestaurantCreate');
+        return view('admin.restaurantCreate');
     }
   
     /**
@@ -48,7 +48,7 @@ class RestaurantController extends Controller
   
         Restaurant::create($request->all());
    
-        return redirect()->route('RestaurantForAdmin.index')
+        return redirect()->route('restaurantForAdmin.index')
                         ->with('success','Restaurant created successfully.');
     }
    
@@ -60,7 +60,7 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        return view('admin.RestaurantShow',compact('restaurant'));
+        return view('admin.restaurantShow',compact('restaurant'));
     }
    
     /**
@@ -72,7 +72,7 @@ class RestaurantController extends Controller
     public function edit(Restaurant $restaurant)
     {
         //$restaurant = Restaurant::find($restaurant);
-        return view('admin.RestaurantEdit',compact('restaurant')); 
+        return view('admin.restaurantEdit',compact('restaurant')); 
     }
 
   
@@ -95,7 +95,7 @@ class RestaurantController extends Controller
   
         $restaurant->update($request->all());
   
-        return redirect()->route('RestaurantForAdmin.index')
+        return redirect()->route('restaurantForAdmin.index')
                         ->with('success','Restaurant updated successfully');
     }
   
@@ -109,7 +109,7 @@ class RestaurantController extends Controller
     {
         $restaurant->delete();
   
-        return redirect()->route('RestaurantForAdmin.index')
+        return redirect()->route('restaurantForAdmin.index')
                         ->with('success','Restaurant deleted successfully');
     }
 }

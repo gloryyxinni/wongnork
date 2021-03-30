@@ -4,10 +4,10 @@
      <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Check all Restaurant</h2>
+                <h2>Restaurant Details</h2>
             </div>
             <div class="pull-right">
-               <a class="btn btn-success" href="{{ route('RestaurantForAdmin.create') }}"> Create new Rastaurant</a> 
+               <a class="btn btn-success" href="{{ route('restaurantForAdmin.create') }}"> Add New Rastaurant</a> 
             </div>
         </div>
     </div>
