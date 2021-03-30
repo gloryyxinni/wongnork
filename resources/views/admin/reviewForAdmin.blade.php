@@ -29,7 +29,7 @@
             <td>{{ $review->Comment_Comment_id }}</td>
             
             <td>
-                <form action="{{ route('reviewForAdmin.destroy',$review->id) }}" method="POST">
+                <form action="{{ route('reviews.destroy',$review->id) }}" method="POST">
 
                     @csrf
                     @method('DELETE')
