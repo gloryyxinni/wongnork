@@ -41,7 +41,15 @@
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <x-jet-nav-link href="{{ route('admin.dashboard') }}" :active="request()->routeIs('admin.dashboard')">
-                                    {{ __('Dashboard') }}
+                                    {{ __('RestaurantList') }}
+                                </x-jet-nav-link>
+
+                                <x-jet-nav-link href="{{ route('admin.reviewForAdmin') }}" :active="request()->routeIs('admin.reviewForAdmin')">
+                                    {{ __('ReviewList') }}
+                                </x-jet-nav-link>
+
+                                <x-jet-nav-link href="{{ route('admin.userForAdmin') }}" :active="request()->routeIs('admin.userForAdmin')">
+                                    {{ __('UserList') }}
                                 </x-jet-nav-link>
                             </div>
                         </div>
