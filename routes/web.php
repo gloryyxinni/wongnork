@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReviewController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +31,14 @@ Route::resource('/reviewForAdmin', ReviewController::class);
 
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('user/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+// Route::middleware(['auth:sanctum', 'verified','authadmin'])->get('/admin/dashboard', function () {
+//     return view('admin.RestaurantForAdmin');
+// })->name('admin.dashboard');
+
+Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], function () {
+    Route::get('admin/dashboard', [RestaurantController::class,'index'])->name('admin.dashboard');
+});

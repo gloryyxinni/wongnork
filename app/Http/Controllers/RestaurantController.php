@@ -26,7 +26,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurantCreate');
+        return view('admin.RestaurantCreate');
     }
   
     /**
