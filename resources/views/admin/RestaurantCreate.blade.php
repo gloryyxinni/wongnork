@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+<x-app-layout>
   
 @section('content')
 <div class="row">
@@ -63,3 +63,4 @@
    
 </form>
 @endsection
+</x-app-layout>

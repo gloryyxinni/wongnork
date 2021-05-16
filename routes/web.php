@@ -1,10 +1,9 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReviewController;
-
+use App\Http\Controllers\RestaurantControllerForUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,21 +16,19 @@ use App\Http\Controllers\ReviewController;
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('user/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// // User
+// Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    
+  
 
-// Route::middleware(['auth:sanctum', 'verified','authadmin'])->get('/admin/dashboard', function () {
-//     return view('admin.RestaurantForAdmin');
-// })->name('admin.dashboard');
+// });
 
-
+// // Admin
 Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], function () {
-
     Route::redirect('/', 'admin/restaurantForAdmin');
     
     //  Restaurant List
@@ -51,6 +48,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     //Show
     Route::get('admin/show',[RestaurantController::class, 'show'])->name('admin.show');
 
+  
+
     //Route::resource('/userForAdmin', UserController::class);
     Route::resource('/restaurants', RestaurantController::class);
     Route::resource('/restaurantForAdmin', RestaurantController::class);
@@ -66,14 +65,17 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     
 
 });
+        
+
+// });
+
+// Route::middleware(['auth:sanctum', 'verified'])->get('user/showRestaurantForUser', function () {
+//     return view('showRestaurantForUser');
+// })->name('showRestaurantForUser');
+
+Route::get('user/showRestaurantForUser',[RestaurantControllerForUser::class,'index'])->name('showRestaurantForUser');
 
 
-Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], function () {
-
-    Route::redirect('/', 'admin/restaurantForAdmin');
-    
-    //  Restaurant List
-
-    // Dashboard.
-    Route::get('admin/restaurantForAdmin', [RestaurantController::class,'index'])->name('admin.dashboard');
-});
+// Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->get('admin/dashboard', function () {
+//     return view('admin.restaurantForAdmin');
+// })->name('admin.restaurantForAdmin');

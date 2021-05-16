@@ -18,7 +18,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('name');
             $table->string('location');
             $table->string('open_close_time');
-            $table->string('picture');
+            $table->binary('picture');
             $table->string('phonenumber');
             $table->timestamps();
         });

@@ -38,10 +38,17 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         }
     });
 
+
     Route::group(['middleware' => ['auth', 'verified', 'authadmin']], function () {
-        // User & Profile...
-        Route::get('/admin/profile', [UserProfileController::class, 'show'])
+        // admin & Profile...
+        Route::get('/admin/profile', [UserProfileController::class, 'Adminshow'])
                     ->name('profile.admin-show');
 
+        // API...
+        if (Jetstream::hasApiFeatures()) {
+            Route::get('/admin/api-tokens', [ApiTokenController::class, 'index'])->name('api-tokens.index');
+        }
+
+        
     });
 });

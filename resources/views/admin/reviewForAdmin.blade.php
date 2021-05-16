@@ -1,7 +1,11 @@
-@extends('layouts.admin')
+<x-admin-layout>
+<x-slot name="header">
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{ __('Review Details') }}
+    </h2>
+</x-slot>
 
 @section('content')
-    <h1>Review Details</h1>
     <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -9,7 +13,8 @@
         </div>
     @endif  
 
-    <table class="table table-bordered">
+    <table class="table table-dark">
+        <thead>
         <tr>
 
             <th>User</th>
@@ -19,6 +24,8 @@
             <th width="250px">Action</th>
 
         </tr>
+        </thead>
+        
         @foreach ($reviews as $review)
         <tr>
            
@@ -44,3 +51,4 @@
     {!! $reviews->links() !!}
 
 @endsection
+</x-admin-layout>

@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+<x-admin-layout>
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
@@ -44,3 +44,4 @@
         </div>
     </div>
 @endsection
+</x-admin-layout>

@@ -1,7 +1,12 @@
-@extends('layouts.admin')
+<x-admin-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('User Details') }}
+        </h2>
+    </x-slot>
  
 @section('content')
-   <h1>User Details</h1>
+   
    <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -9,7 +14,7 @@
         </div>
     @endif
    
-    <table class="table table-bordered">
+    <table class="table table-dark">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -30,3 +35,4 @@
     {!! $users->links() !!}
       
 @endsection
+</x-admin-layout>

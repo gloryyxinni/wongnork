@@ -21,7 +21,7 @@ class UserProfileController extends Controller
         ]);
     }
 
-    public function adminShow(Request $request)
+    public function Adminshow(Request $request)
     {
         return view('profile.admin-show', [
             'request' => $request,

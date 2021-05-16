@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class Authadmin
+class AuthAdmin
 {
     /**
      * Handle an incoming request.
@@ -16,9 +16,13 @@ class Authadmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->utype== "ADM"){
-            return $next($request);
-         }
-         return redirect('user/dashboard')->with('error', "you don't have admin");
+        if(auth()->user()->utype == 'ADM')
+        {
+           return $next($request);
+        }
+        
+        return redirect('user/showRestaurantForUser')->with('error', "you don't have admin");
+
     }
+    
 }

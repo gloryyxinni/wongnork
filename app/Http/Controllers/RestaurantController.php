@@ -112,5 +112,7 @@ class RestaurantController extends Controller
         return redirect()->route('restaurantForAdmin.index')
                         ->with('success','Restaurant deleted successfully');
     }
+
+ 
 }
 
