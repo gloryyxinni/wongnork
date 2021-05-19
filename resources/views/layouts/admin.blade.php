@@ -42,7 +42,7 @@
                         {{ __('Manage Restaurant ') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('admin.reviewForAdmin') }}" :active="request()->routeIs('admin.reviewForAdmin')">
+                    <x-jet-nav-link href="{{ route('reviewForAdmin.index') }}" :active="request()->routeIs('reviewForAdmin.index')">
                         {{ __('Manage Review') }}
                     </x-jet-nav-link>
 

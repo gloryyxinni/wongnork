@@ -35,8 +35,9 @@ class ReviewController extends Controller
      * @param  \App\Reviews
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reviews $review)
+    public function destroy($id)
     {
+        $review = Reviews::find($id);
         $review->delete();
   
         return redirect()->route('reviewForAdmin.index')
