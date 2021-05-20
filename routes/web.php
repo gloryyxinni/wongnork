@@ -7,6 +7,7 @@ use App\Http\Controllers\RestaurantControllerForUser;
 use App\Http\Controllers\ReviewControllerForUser;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,11 +24,14 @@ Route::get('/welcome', function () {
 });
 
 // // User
-// Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
+    Route::redirect('/', 'user/showRestaurantForUser');
     
-  
+    Route::get('user/showRestaurantForUser',[RestaurantControllerForUser::class,'index'])->name('showRestaurantForUser');
+    // Route::get('user/RestaurantForUser/{id}',[RestaurantControllerForUser::class,'show'])->name('ReviewForUser');   
+    Route::resource('user/ReviewForUser',RestaurantControllerForUser::class);
 
-// });
+});
 
 // // Admin
 Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], function () {
@@ -73,10 +77,8 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
 //     return view('showRestaurantForUser');
 // })->name('showRestaurantForUser');
 
-Route::get('user/showRestaurantForUser',[RestaurantControllerForUser::class,'index'])->name('showRestaurantForUser');
-Route::get('user/ReviewForUser/{id}',[RestaurantControllerForUser::class,'show'])->name('ReviewForUser');
 
-
+// Route::resource('user',[RestaurantControllerForUser::class]);
 
 // Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->get('admin/dashboard', function () {
 //     return view('admin.restaurantForAdmin');

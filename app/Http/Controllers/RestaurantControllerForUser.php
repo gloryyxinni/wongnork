@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Restaurant;
+use App\Models\Comment;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,7 @@ class RestaurantControllerForUser extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -38,7 +39,22 @@ class RestaurantControllerForUser extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'Detail' => '',
+            'Recommend_menu' => '',
+            'restaurant_id' =>''
+            
+         ]);
+  
+        // ReviewForUser::create($request->all());
+
+        $comment = new Comment;
+        $comment->Detail = $request->Detail;
+        $comment->Recommend_menu = $request->Recommend_menu;
+        
+        $comment->save();
+   
+         return redirect()->route('ReviewForUser.show',[$request->restaurant_id]);
     }
 
     /**
