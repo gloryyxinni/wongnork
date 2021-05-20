@@ -10,9 +10,12 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         @livewireStyles
 
         <!-- Scripts -->
@@ -20,7 +23,62 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        
+       
+       
+       <style>
+        
+            body {
+                 margin: 0;
+                 padding: 0;
+                 font-family: 'Open Sans', serif;
+                 background: #eee
+             }
+            
+             .content {
+                 width: 420px;
+                 margin-top: 100px
+             }
+            
+             .ratings {
+                 background-color: #fff;
+                 padding: 54px;
+                 border: 1px solid rgba(0, 0, 0, 0.1);
+                 box-shadow: 0px 10px 10px #E0E0E0
+             }
+            
+             .product-rating {
+                 font-size: 50px
+             }
+            
+             .stars i {
+                 font-size: 18px;
+                 color: #FFFF00
+             }
+            
+             .rating-text {
+                 margin-top: 10px
+             }
+             input-group{
+                text-align: center;
+                margin: 0 auto;
+             }
+
+             .center-div-content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        
+            
+             
+            </style>
     </head>
+
+  
+
     <body class="font-sans antialiased">
         <x-jet-banner />
 
