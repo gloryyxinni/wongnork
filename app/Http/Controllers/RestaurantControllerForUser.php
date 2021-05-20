@@ -49,7 +49,8 @@ class RestaurantControllerForUser extends Controller
      */
     public function show($id)
     {
-        //
+        $restaurant = Restaurant::find($id);
+        return view('user.ReviewForUser',compact('restaurant'));
     }
 
     /**
