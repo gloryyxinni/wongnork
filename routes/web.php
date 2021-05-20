@@ -7,6 +7,7 @@ use App\Http\Controllers\RestaurantControllerForUser;
 use App\Http\Controllers\ReviewControllerForUser;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -81,3 +82,4 @@ Route::get('user/ReviewForUser/{id}',[RestaurantControllerForUser::class,'show']
 // Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->get('admin/dashboard', function () {
 //     return view('admin.restaurantForAdmin');
 // })->name('admin.restaurantForAdmin');
+// Test by kh
