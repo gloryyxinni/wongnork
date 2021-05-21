@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Restaurant;
 use App\Models\Comment;
+use App\Models\Rating;
+use App\Models\Reviews;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -42,7 +44,11 @@ class RestaurantControllerForUser extends Controller
         $request->validate([
             'Detail' => '',
             'Recommend_menu' => '',
-            'restaurant_id' =>''
+            'restaurant_id' =>'',
+            'ratingFood'=>'',
+            'ratingLocation'=>'',
+            'ratingService'=>'',
+            'userID' =>''
             
          ]);
   
@@ -53,8 +59,30 @@ class RestaurantControllerForUser extends Controller
         $comment->Recommend_menu = $request->Recommend_menu;
         
         $comment->save();
-   
-         return redirect()->route('ReviewForUser.show',[$request->restaurant_id]);
+
+        $rating = new Rating;
+
+        $rating->Food_score = $request->ratingFood;
+        $rating->Location_score = $request->ratingLocation;
+        $rating->Service_score = $request->ratingService;
+
+        $tatalRating = $request->ratingService + $request->ratingLocation + $request->ratingFood;
+        $rating->Total_score = $tatalRating ;
+        $rating->save();
+
+        $reviews = new Reviews;
+        $reviews->User_id = $request->userID;
+        $reviews->Restaurant_id = $request->restaurant_id;
+
+        $findRating = Rating::orderBy('id', 'desc')->first();
+        $findComment = Comment::orderBy('id', 'desc')->first();
+
+        $reviews->Rating_Rating_id = $findRating->id;
+        $reviews->Comment_Comment_id = $findComment->id;
+        $reviews->save();
+
+
+        return redirect()->route('ReviewForUser.show',[$request->restaurant_id]);
     }
 
     /**
