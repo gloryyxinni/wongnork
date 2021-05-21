@@ -83,3 +83,4 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
 // Route::middleware(['auth:sanctum', 'verified', 'authadmin'])->get('admin/dashboard', function () {
 //     return view('admin.restaurantForAdmin');
 // })->name('admin.restaurantForAdmin');
+// Test by kh
