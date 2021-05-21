@@ -20,15 +20,19 @@
                         </div>
                     </div>
                     <div class="product_details">
-                        <h5><a href="ec-product-detail.html">{{$restaurant->name}}</a></h5>
+                        <h5><a href="ec-product-detail.html" class="mb-1"><a href="#" class="text-dark">{{$restaurant->name}}</a></h5>
                         <ul class="product_price list-unstyled">
-                            <li class="old_price">$16.00</li>
-                            <li class="new_price">$13.00</li>
+                            {{-- <li class="old_price">$16.00</li>
+                            <li class="new_price">$13.00</li> --}}
                        
-                              <div class="ratings"> <span class="product-rating">4.6</span><span>/5</span>
+                               <div  >4.6/5
                                   <div class="stars"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
                                   <div class="rating-text"> <span>46 ratings & 15 reviews</span> </div>
-                              </div> 
+                              </div>  
+                              <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>2984 Woodhill Avenue Easton, MD 21601</p>
+                              
+                              
+                           
                         </ul>
                     </div>
                    
@@ -43,6 +47,6 @@
 
 
 
-  
+{!! $restaurants->links() !!}
  
 </x-app-layout>
