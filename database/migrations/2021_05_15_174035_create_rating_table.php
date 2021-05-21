@@ -13,12 +13,12 @@ class CreateRatingTable extends Migration
      */
     public function up()
     {
-        Schema::create('rating', function (Blueprint $table) {
+        Schema::create('ratings', function (Blueprint $table) {
             $table->id();
-            $table->float('Food_score', 5, 2);
-            $table->float('Location_score', 5, 2);
-            $table->float('Service_score', 5, 2);
-            $table->float('Total_score', 5, 2);
+            $table->float('Food_score');
+            $table->float('Location_score');
+            $table->float('Service_score');
+            $table->float('Total_score');
             $table->timestamps();
         });
     }

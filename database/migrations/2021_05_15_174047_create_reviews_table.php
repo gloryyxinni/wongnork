@@ -15,10 +15,19 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->integer('User_id');
-            $table->integer('Restaurant_id');
-            $table->integer('Rating_Rating_id');
-            $table->integer('Comment_Comment_id');
+
+            $table->bigInteger('User_id')->unsigned();
+            $table->foreign('User_id')->references('id')->on('users');
+
+            $table->bigInteger('Restaurant_id')->unsigned();
+            $table->foreign('Restaurant_id')->references('id')->on('restaurants');
+
+            $table->bigInteger('Rating_Rating_id')->unsigned();
+            $table->foreign('Rating_Rating_id')->references('id')->on('ratings');
+
+            $table->bigInteger('Comment_Comment_id')->unsigned();
+            $table->foreign('Comment_Comment_id')->references('id')->on('comments');
+
             $table->timestamps();
             
         });
