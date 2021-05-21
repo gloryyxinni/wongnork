@@ -15,7 +15,7 @@ class RestaurantControllerForUser extends Controller
      */
     public function index()
     {
-        $restaurants = Restaurant::latest()->paginate(5);
+        $restaurants = Restaurant::latest()->paginate(8);
   
         return view('user.showRestaurantForUser',compact('restaurants'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
