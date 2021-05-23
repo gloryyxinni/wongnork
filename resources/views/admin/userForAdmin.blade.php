@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('User Details') }}
+        <h2 class="ml-2 font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Users') }}
         </h2>
     </x-slot>
 
@@ -14,26 +14,47 @@
         </div>
     @endif
    
-    <table class="table border-collapse">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Password</th>
-        </tr>
-        @foreach ($users as $user)
-        <tr>
-            <td>{{ $user->id }}</td>
-            <td>{{ $user->name }}</td>
-            <td>{{ $user->email }}</td>
-            <td>{{ $user->password }}</td>
-            
-        </tr>
-        @endforeach
-    </table>
-    <br>
+    <div class="container mx-auto">
+<div class="flex flex-row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title text-uppercase mb-0">Manage Users</h5>
+            </div>
+            <div class="table-responsive">
+                <table class="table content-center no-wrap user-table mb-0">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-0 text-uppercase font-medium pl-4">ID</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Name</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Email</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Password</th>
+                    </tr>
+                  </thead>
+                  @foreach ($users as $user)
+                  <tbody>
+                    <tr>
+                      <td class="pl-4">{{ $user->id }}</td>
+                      <td>
+                          <h5 class="font-medium mb-0">{{ $user->name }}</h5>
+                      </td>
+                      <td>
+                          <span class="text-muted">{{ $user->email }}</span><br>
+                      </td>
+                      <td>
+                          <span class="text-muted">{{ $user->password }}</span><br>
+                      </td>
+                    </tr>
+                  </tbody>
+                  @endforeach 
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+     
     {!! $users->links() !!}
-</div> 
+   
 @endsection
-
 </x-admin-layout>
