@@ -4,9 +4,9 @@
             {{ __('User Details') }}
         </h2>
     </x-slot>
- 
+
 @section('content')
-   
+<div class="container mx-auto">
    <br>
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -14,7 +14,7 @@
         </div>
     @endif
    
-    <table class="table table-dark">
+    <table class="table border-collapse">
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -33,6 +33,7 @@
     </table>
     <br>
     {!! $users->links() !!}
-      
+</div> 
 @endsection
+
 </x-admin-layout>

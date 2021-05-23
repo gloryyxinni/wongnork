@@ -1,6 +1,6 @@
 <x-admin-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="ml-2 font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Restaurant Details') }}
         </h2>
     </x-slot>
@@ -8,33 +8,31 @@
 @section('content')
      <div class="row">
         <div class="col-lg-12 margin-tb">
-            <br>
-          
-            <br>
-            <div class="pull-right" >
-                <a class="btn btn-success" href="{{ route('restaurantForAdmin.create') }}"> Add New Rastaurant</a> 
-             </div>
+            <div class="pull-left" >
+                <a class="btn btn-success mt-3 ml-36 mb-2.5" href="{{ route('restaurantForAdmin.create') }}"> Add New Rastaurant</a> 
+           
+            </div>
              <br>
         
            
         </div>
     </div>
 
-<div class="container">
-<div class="row">
+<div class="container mx-auto">
+<div class="flex flex-row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title text-uppercase mb-0">Manage Users</h5>
+                <h5 class="card-title text-uppercase mb-0">Manage Restaurants</h5>
             </div>
             <div class="table-responsive">
-                <table class="table no-wrap user-table mb-0">
+                <table class="table content-center no-wrap user-table mb-0">
                   <thead>
                     <tr>
-                      <th scope="col" class="border-0 text-uppercase font-medium pl-4">#</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium pl-4">ID</th>
                       <th scope="col" class="border-0 text-uppercase font-medium">Name</th>
                       <th scope="col" class="border-0 text-uppercase font-medium">location</th>
-                      <th scope="col" class="border-0 text-uppercase font-medium">open_close_time</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">open-close time</th>
                       <th scope="col" class="border-0 text-uppercase font-medium">picture</th>
                       <th scope="col" class="border-0 text-uppercase font-medium">phonenumber</th>
                       <th scope="col" class="border-0 text-uppercase font-medium">Manage</th>
