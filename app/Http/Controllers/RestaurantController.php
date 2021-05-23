@@ -113,6 +113,28 @@ class RestaurantController extends Controller
                         ->with('success','Restaurant deleted successfully');
     }
 
+    public function imageUpload()
+    {
+        return view('admin.RestaurantCreate');
+    }
+
+    public function imageUploadPost(Request $request)
+    {
+        $request->validate([
+            'picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+    
+        $imageName = time().'.'.$request->picture->extension();  
+     
+        $request->picture->move(public_path('pictures'), $imageName);
+  
+        /* Store $imageName name in DATABASE from HERE */
+    
+        return back()
+            ->with('success','You have successfully upload image.')
+            ->with('picture',$imageName); 
+    }
+
  
 }
 

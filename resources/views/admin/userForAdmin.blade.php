@@ -17,7 +17,7 @@
     <div class="container mx-auto">
 <div class="flex flex-row">
     <div class="col-md-12">
-        <div class="card">
+        <div class="card mt-12">
             <div class="card-body">
                 <h5 class="card-title text-uppercase mb-0">Manage Users</h5>
             </div>
@@ -29,6 +29,7 @@
                       <th scope="col" class="border-0 text-uppercase font-medium">Name</th>
                       <th scope="col" class="border-0 text-uppercase font-medium">Email</th>
                       <th scope="col" class="border-0 text-uppercase font-medium">Password</th>
+                      <th scope="col" class="border-0 text-uppercase font-medium">Manage</th>
                     </tr>
                   </thead>
                   @foreach ($users as $user)
@@ -43,6 +44,14 @@
                       </td>
                       <td>
                           <span class="text-muted">{{ $user->password }}</span><br>
+                      </td>
+                      <td>
+                        <form action="{{ route('userForAdmin.destroy',$user->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-trash"></i> </button> 
+                            {{-- <button type="submit" class="btn btn-danger">Delete</button>
+                             --}}
                       </td>
                     </tr>
                   </tbody>

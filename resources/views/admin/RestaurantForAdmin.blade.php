@@ -8,8 +8,8 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left" >
-                <a class="btn btn-success mt-3 ml-36 mb-2.5" href="{{ route('restaurantForAdmin.create') }}"> Add New Rastaurant</a> 
+            <div class="pull-right" >
+                <a class="btn btn-success mt-8 mr-8 mb-2.5" href="{{ route('restaurantForAdmin.create') }}"> Add New Rastaurant</a> 
             </div>
             <br>
         </div>

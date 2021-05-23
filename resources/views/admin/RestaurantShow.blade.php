@@ -1,47 +1,60 @@
 <x-admin-layout>
+    <x-slot name="header">
+        <h2 class="ml-2 font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Show Restaurant') }}
+        </h2>
+    </x-slot>
+
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show Restaurant</h2>
+            <div class="pull-right mr-8" >
+                <a class="btn btn-primary mt-12 ml-36 mb-2.5" href="{{ route('restaurantForAdmin.index') }}"> Back </a> 
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('restaurantForAdmin.index') }}"> Back</a>
+            <br>
+        </div>
+    </div>
+    
+    <div class="container mx-auto w-full">
+    <div class="flex flex-row">
+    <div class="card w-full">
+            <div class="card-body content-center">
+                <strong class="card-title text-2xl leading-tight text-uppercase mb-0 ml-40">Restaurant #{{ $restaurant->id }}</strong>
+            </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 w-full">
+            <div class="form-group">
+                <h2 class="text-2xl ml-52">Name: {{ $restaurant->name }}</h2>
+                
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 w-full">
+            <div class="form-group">
+                <h2 class="text-2xl ml-52">Location: {{ $restaurant->location }}</h2>
+                
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 w-full">
+            <div class="form-group">
+                <h2 class="text-2xl ml-52">Open-Close Time: {{ $restaurant->open_close_time }}</h2>
+                
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 w-full">
+            <div class="form-group">
+                <h2 class="text-2xl ml-52">Picture: {{ $restaurant->picture }}</h2>
+                <div class="ml-52"><img src="{{ $restaurant->picture }}"></div>
+         
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 w-full">
+            <div class="form-group">
+                <h2 class="text-2xl ml-52">Phone Number: {{ $restaurant->phonenumber }}</h2>
+                
             </div>
         </div>
     </div>
-   
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                {{ $restaurant->name }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Location:</strong>
-                {{ $restaurant->location }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>open_close_time:</strong>
-                {{ $restaurant->open_close_time }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>picture:</strong>
-                {{ $restaurant->picture }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>phonenumber:</strong>
-                {{ $restaurant->phonenumber }}
-            </div>
-        </div>
+    </div>
+    </div>
     </div>
 @endsection
 </x-admin-layout>

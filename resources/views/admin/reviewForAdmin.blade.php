@@ -17,7 +17,7 @@
     <div class="container mx-auto">
 <div class="flex flex-row">
     <div class="col-md-12">
-        <div class="card">
+        <div class="card mt-12">
             <div class="card-body">
                 <h5 class="card-title text-uppercase mb-0">Manage Reviews</h5>
             </div>
