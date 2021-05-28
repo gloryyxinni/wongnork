@@ -18,11 +18,11 @@
                     <h3 class="color--white mb-5">{{$restaurant->name}}</h3>
         
                     <ul class="contact-info__list list-style--none position-relative z-index-101">
-                      {{-- <li class=="mb-3 pl-4">
-                        <div class="col-md-4">
-                          <img src="/image/restaurant.jpg" alt="restaurant" style="height: 200px; width: 200px">
-                      </div>
-                      </li> --}}
+                       <li class=="mb-3 pl-4">
+                       
+                          <img src="/image/restaurant.jpg" alt="restaurant">
+                      </li> 
+                      <br>
                         <li class="mb-4 pl-4">
                             <span class="position-absolute"><i class="fas fa-clock"></i></span>{{$restaurant->open_close_time}}
                         </li>
