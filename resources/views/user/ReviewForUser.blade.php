@@ -9,6 +9,8 @@
     <style>
         
 
+        
+
     </style>
     <div class="container">
       <div class="container">
@@ -100,14 +102,14 @@
         
                             <div class="col-sm-12 mb-3">
                                 <div class="form-group">
-                                    <label class="required-field" for="message">แนะนำเมนูโปรดของคุณ</label>
-                                    <textarea class="form-control"  name="Recommend_menu" id="Recommend_menu" rows="4" placeholder="Hi there, I would like to....."></textarea>
+                                    
+                                    <textarea class="form-control"  name="Recommend_menu" id="Recommend_menu" rows="4" placeholder="แนะนำเมนูโปรดของคุณ....."></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-12 mb-3">
                               <div class="form-group">
-                                  <label class="required-field" for="message">เขียนรีวิวของคุณที่นี่</label>
-                                  <textarea class="form-control" name="Detail" id="Detail" rows="4" placeholder="Hi there, I would like to....."></textarea>
+                                  {{-- <label class="required-field" for="message">เขียนรีวิวของคุณที่นี่</label> --}}
+                                  <textarea class="form-control" name="Detail" id="Detail" rows="4" placeholder="เขียนรีวิวของคุณที่นี่....."></textarea>
                               </div>
                           </div>
         

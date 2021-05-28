@@ -15,7 +15,8 @@
                     <div class="cp_img">
                         <img src="/image/112.jpg" alt="Product" class="img-fluid">
                         <div class="hover">
-                            <a href="{{route("ReviewForUser.show",$restaurant->id)}}" class="btn btn-primary btn-sm waves-effect">Review</i></a>
+                            <a href="{{route("ReviewForUser.show",$restaurant->id)}}" class="btn btn-primary btn-sm waves-effect">Write Review</i></a>
+                            <a href="{{route("showReviewForUser.show",$restaurant->id)}}" class="btn btn-primary btn-sm waves-effect">See Review</i></a>
                             {{-- <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a> --}}
                         </div>
                     </div>
@@ -31,8 +32,7 @@
                               </div>  
                               <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>{{$restaurant->location}}</p>
                               
-                              
-                           
+                          
                         </ul>
                     </div>
                    
