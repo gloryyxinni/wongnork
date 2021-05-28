@@ -62,11 +62,12 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'authadmin']], functi
     Route::post('RestaurantCreate', [ RestaurantController::class, 'imageUploadPost' ])->name('image.upload.post');
     
     // Review List
-    Route::resource('reviewForAdmin', ReviewController::class);
+    Route::resource('admin/reviewForAdmin', ReviewController::class);
     
     // User List
-    Route::get('admin/userForAdmin',[UserController::class,'index'])->name('admin.userForAdmin');
-    Route::post('delete/{id}',[UserController::class, 'destroy'])->name('userForAdmin.destroy');
+    // Route::get('admin/userForAdmin',[UserController::class,'index'])->name('admin.userForAdmin');
+    // Route::post('delete/{id}',[UserController::class, 'destroy'])->name('userForAdmin.destroy');
+    Route::resource('admin/userForAdmin', UserController::class);
     
     // search
     Route::get('admin/search','RestaurantController@search');

@@ -47,7 +47,7 @@
                         {{ __('Manage Review') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('admin.userForAdmin') }}" :active="request()->routeIs('admin.userForAdmin')">
+                    <x-jet-nav-link href="{{ route('userForAdmin.index') }}" :active="request()->routeIs('userForAdmin.index')">
                         {{ __('Manage User') }}
                     </x-jet-nav-link>
                 </div>

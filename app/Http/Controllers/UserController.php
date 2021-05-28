@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Reviews;
 
 class UserController extends Controller
 {
@@ -33,8 +34,12 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        $user = Users::find($id);
+        $review = Reviews::where('User_id',$id);
+        $review->delete();
+        $user = User::find($id);
         $user->delete();
+        
+        
   
         return redirect()->route('userForAdmin.index')
                         ->with('success','User deleted successfully');
