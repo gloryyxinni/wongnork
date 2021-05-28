@@ -81,8 +81,10 @@ class RestaurantControllerForUser extends Controller
         $reviews->Comment_Comment_id = $findComment->id;
         $reviews->save();
 
+        
 
-        return redirect()->route('ReviewForUser.show',[$request->restaurant_id]);
+
+        return redirect()->route('showReviewForUser.show',$request->restaurant_id);
     }
 
     /**

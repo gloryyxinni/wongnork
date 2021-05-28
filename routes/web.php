@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function () {
     Route::get('user/showRestaurantForUser',[RestaurantControllerForUser::class,'index'])->name('showRestaurantForUser');
     Route::get('user/RestaurantForUser/{id}',[RestaurantControllerForUser::class,'show'])->name('ReviewForUser');   
     Route::resource('user/ReviewForUser',RestaurantControllerForUser::class);
-    
+    Route::resource('user/showReviewForUser',ReviewControllerForUser::class);
 
 });
 
