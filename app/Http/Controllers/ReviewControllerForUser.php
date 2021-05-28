@@ -52,8 +52,9 @@ class ReviewControllerForUser extends Controller
      */
     public function show($id)
     {
+        $restaurant = Restaurant::find($id);
         $reviews = Reviews::all()->where('Restaurant_id', $id);
-        return view('user.showReviewForUser',compact('reviews'));
+        return view('user.showReviewForUser',compact('reviews','restaurant'));
     }
 
     /**

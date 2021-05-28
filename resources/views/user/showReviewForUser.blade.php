@@ -21,7 +21,8 @@
                               <a href="#"><i class="icofont-ui-rating icofont-2x active"></i></a>
                               <a href="#"><i class="icofont-ui-rating icofont-2x"></i></a>
                               </span>
-                    <h5 class="mb-0 pt-1">Rate this Place</h5>
+                    <h5 class="mb-0 pt-1">{{$restaurant->name }}</h5>
+                    
                 </div>
                 <div class="bg-white rounded shadow-sm p-4 mb-4 clearfix graph-star-rating">
                     <h5 class="mb-0 mb-4">Ratings and Reviews</h5>
@@ -33,7 +34,9 @@
                             <a href="#"><i class="icofont-ui-rating active"></i></a>
                             {{-- <a href="#"><i class="icofont-ui-rating"></i></a> <b class="text-black ml-2">{{count($review)}}</b> --}}
                         </div>
+                        
                         <p class="text-black mb-4 mt-2">Rated 3.5 out of 5</p>
+                        
                     </div>
                     <div class="graph-star-rating-body">
                         <div class="rating-list">

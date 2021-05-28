@@ -66,7 +66,7 @@ class RestaurantControllerForUser extends Controller
         $rating->Location_score = $request->ratingLocation;
         $rating->Service_score = $request->ratingService;
 
-        $tatalRating = $request->ratingService + $request->ratingLocation + $request->ratingFood;
+        $tatalRating = ($request->ratingService + $request->ratingLocation + $request->ratingFood)/3;
         $rating->Total_score = $tatalRating ;
         $rating->save();
 
