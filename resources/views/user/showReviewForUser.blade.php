@@ -31,7 +31,7 @@
                             <a href="#"><i class="icofont-ui-rating active"></i></a>
                             <a href="#"><i class="icofont-ui-rating active"></i></a>
                             <a href="#"><i class="icofont-ui-rating active"></i></a>
-                            <a href="#"><i class="icofont-ui-rating"></i></a> <b class="text-black ml-2">334</b>
+                            {{-- <a href="#"><i class="icofont-ui-rating"></i></a> <b class="text-black ml-2">{{count($review)}}</b> --}}
                         </div>
                         <p class="text-black mb-4 mt-2">Rated 3.5 out of 5</p>
                     </div>
@@ -94,38 +94,49 @@
                     </div>
                 </div>
                 <div class="bg-white rounded shadow-sm p-4 mb-4 restaurant-detailed-ratings-and-reviews">
-                    <a href="#" class="btn btn-outline-primary btn-sm float-right">Top Rated</a>
+
                     <h5 class="mb-1">All Ratings and Reviews</h5>
+                    <hr>
                     @foreach ($reviews as $review) 
                     <div class="reviews-members pt-4 pb-4">
                         <div class="media">
                             <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-pill"></a>
                            
                             <div class="media-body">
+                                {{-- star food --}}
                                 <div class="reviews-members-header">
+                                    @for ($i = 0; $i < $review->rating->Food_score; $i++)
                                     <span class="star-rating float-right">
-                                          <a href="#"><i class="icofont-ui-rating active"></i></a>
-                                          <a href="#"><i class="icofont-ui-rating active"></i></a>
-                                          <a href="#"><i class="icofont-ui-rating active"></i></a>
-                                          <a href="#"><i class="icofont-ui-rating active"></i></a>
                                           <a href="#"><i class="icofont-ui-rating"></i></a>
                                           </span>
-                                    <h6 class="mb-1"><a class="text-black" href="#">{{ $review->user->name }}</a></h6>
-                                    <p class="text-gray">Tue, 20 Mar 2020</p>
+                                    @endfor
                                 </div>
+                                
+                                <div class="reviews-members-header">
+                                    
+                                    <h6 class="mb-1"><a class="text-black" href="#">{{ $review->user->name }}</a></h6>
+                                    <p class="text-gray">{{ $review->created_at }}</p>
+                                </div>
+                               
+
+                                <div class="reviews-members-body">
+                                    <span class="text-muted">เมนูแนะนำ: {{ $review->comment->Recommend_menu }}</span><br>
+                                </div>
+
                                 <div class="reviews-members-body">
                                     <p>{{ $review->comment->Detail }} </p>
                                 </div>
-                               
+
                             </div>
                             
                         </div>
                         
                     </div>
+                    <hr>
                     @endforeach
                     <a class="text-center w-100 d-block mt-4 font-weight-bold" href="#">See All Reviews</a>
                 </div>
-                <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
+                {{-- <div class="bg-white rounded shadow-sm p-4 mb-5 rating-review-select-page">
                     <h5 class="mb-4">Leave Comment</h5>
                     <p class="mb-2">Rate the Place</p>
                     <div class="mb-4">
@@ -146,7 +157,7 @@
                             <button class="btn btn-primary btn-sm" type="button"> Submit Comment </button>
                         </div>
                     </form>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
