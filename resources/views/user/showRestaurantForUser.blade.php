@@ -29,7 +29,7 @@
                                   <div class="stars"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
                                   <div class="rating-text"> <span>46 ratings & 15 reviews</span> </div>
                               </div>  
-                              <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>2984 Woodhill Avenue Easton, MD 21601</p>
+                              <p class="text-muted f-14 mb-0"><i class="mdi mdi-map-marker mr-2"></i>{{$restaurant->location}}</p>
                               
                               
                            
