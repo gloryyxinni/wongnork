@@ -39,24 +39,23 @@
                     <tr>
                       <td class="pl-4">{{ $review->id }}</td>
                       <td>
-                          <h5 class="font-medium mb-0">{{ $review->User_id }}</h5>
+                          <h5 class="font-medium mb-0">{{$review->user->name }}</h5>
                       </td>
                       <td>
-                          <h5 class="font-medium mb-0">{{ $review->Restaurant_id }}</h5>
+                          <h5 class="font-medium mb-0">{{ $review->restaurant->name }}</h5>
                       </td>
                       <td>
-                          <span class="text-muted">{{ $review->Rating_Rating_id }}</span><br>
+                          <span class="text-muted">{{ $review->rating->Total_score }}</span><br>
                       </td>
                       <td>
-                          <span class="text-muted">{{ $review->Comment_Comment_id }}</span><br>
+                          <span class="text-muted">{{ $review->comment->Detail }}</span><br>
                       </td>
                       <td>
                         <form action="{{ route('reviewForAdmin.destroy',$review->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-trash"></i> </button> 
-                            {{-- <button type="submit" class="btn btn-danger">Delete</button>
-                             --}}
+                            
                       </td>
                     </tr>
                   </tbody>
