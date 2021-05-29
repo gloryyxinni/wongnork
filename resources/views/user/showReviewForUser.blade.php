@@ -104,7 +104,7 @@
                     <div class="reviews-members pt-4 pb-4">
                         <div class="media">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                            <a href="#"><img alt="Generic placeholder image" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" class="mr-3 rounded-pill"></a>
+                            <a href="#"><img alt="Generic placeholder image" src="{{ Auth::user()->profile_photo_url }}"  class="mr-3 rounded-pill"></a>
                             @endif
                             <div class="media-body">
                                 {{-- star food --}}
