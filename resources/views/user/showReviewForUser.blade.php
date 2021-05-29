@@ -103,12 +103,13 @@
                     @foreach ($reviews as $review) 
                     <div class="reviews-members pt-4 pb-4">
                         <div class="media">
-                            <a href="#"><img alt="Generic placeholder image" src="http://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-pill"></a>
-                           
+                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                            <a href="#"><img alt="Generic placeholder image" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" class="mr-3 rounded-pill"></a>
+                            @endif
                             <div class="media-body">
                                 {{-- star food --}}
                                 <div class="reviews-members-header">
-                                    @for ($i = 0; $i < $review->rating->Food_score; $i++)
+                                    @for ($i = 0; $i < $review->rating->Total_score; $i++)
                                     <span class="star-rating float-right">
                                           <a href="#"><i class="icofont-ui-rating"></i></a>
                                           </span>
@@ -117,7 +118,7 @@
                                 
                                 <div class="reviews-members-header">
                                     
-                                    <h6 class="mb-1"><a class="text-black" href="#">{{ $review->user->name }}</a></h6>
+                                    <h6 class="mb-1"><a class="text-black" href="#">{{ $review->user->name}}</a></h6>
                                     <p class="text-gray">{{ $review->created_at }}</p>
                                 </div>
                                
