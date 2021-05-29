@@ -49,7 +49,7 @@
                           <span class="text-muted">{{ $restaurant->open_close_time }}</span><br>
                       </td>
                       <td>
-                          <span class="text-muted">{{ $restaurant->picture }}</span><br>
+                         <img src="{{ asset('image/112.jpg')}}" alt="restaurant"  width="100px" >
                       </td>
                       <td>
                         <span class="text-muted">{{ $restaurant->phonenumber }}</span><br>
@@ -57,7 +57,7 @@
                       <td>
                         <form action="{{ route('restaurants.destroy',$restaurant->id) }}" method="POST">
 
-                            <a  href="{{ route('restaurants.show',$restaurant->id) }}" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-eye"></i> </a>
+                            <a href="{{ route('restaurants.show',$restaurant->id) }}" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-eye"></i> </a>
                             <a href="{{ route('restaurants.edit',$restaurant->id) }}" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2"><i class="fa fa-edit"></i> </a>
 
                             {{-- <a class="btn btn-info"  href="{{ route('restaurants.show',$restaurant->id) }}">Show</a>
