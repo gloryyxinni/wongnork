@@ -18,9 +18,24 @@ class RestaurantControllerForUser extends Controller
     public function index()
     {
         $restaurants = Restaurant::latest()->paginate(8);
-  
-        return view('user.showRestaurantForUser',compact('restaurants'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $rating =  [];
+        $ratingFormDB = Reviews::all();
+        foreach ($restaurants as $valueRestaurant) {
+            $totalRating = 0;
+            foreach($ratingFormDB as $valueReview){
+                
+                if($valueRestaurant->id == $valueReview->Restaurant_id){
+                   
+                    $totalRating += $valueReview->rating->Total_score;
+                }
+                
+            }
+            $ratingCount = Reviews::all()->where('Restaurant_id',$valueReview->Restaurant_id);
+            array_push($rating ,$totalRating/count($ratingCount));
+        }
+        $data = [$restaurants,$rating];
+        return view('user.showRestaurantForUser',compact('data'))
+        ->with('i', (request()->input('page', 1) - 1) * 8);
     }
 
     /**

@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <x-slot name="header">
         <h2 class="ml-2 font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Add New Restaurant') }}
@@ -48,17 +48,10 @@
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
-    
             <div class="form-group">
                 <strong>picture:</strong>
-                <form action="{{ route('image.upload.post') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="row">
-                        <div class="col-md-6">
-                            <input type="file" name="picture" class="form-control">
-                        </div>
-                    </div>
-                </form>
+                <input type="file"  name="picture"  accept="image/png, image/jpeg, image/jpg">
+                    
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
