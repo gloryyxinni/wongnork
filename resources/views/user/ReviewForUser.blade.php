@@ -20,9 +20,9 @@
                     <h3 class="color--white mb-5">{{$restaurant->name}}</h3>
         
                     <ul class="contact-info__list list-style--none position-relative z-index-101">
-                       <li class=="mb-3 pl-4">
+                       <li class="mb-3 pl-4">
                        
-                          <img src="/image/restaurant.jpg" alt="restaurant">
+                          <img src="{{ asset('image/112.jpg')}}" alt="restaurant">
                       </li> 
                       <br>
                         <li class="mb-4 pl-4">
