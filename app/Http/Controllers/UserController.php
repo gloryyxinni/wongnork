@@ -36,6 +36,12 @@ class UserController extends Controller
     {
         $review = Reviews::where('User_id',$id);
         $review->delete();
+        $review = Reviews::where('Restaurant_id',$id);
+        $review->delete();
+        $review = Reviews::where('Rating_Rating_id',$id);
+        $review->delete();
+        $review = Reviews::where('Comment_Comment_id',$id);
+        $review->delete();
         $user = User::find($id);
         $user->delete();
         

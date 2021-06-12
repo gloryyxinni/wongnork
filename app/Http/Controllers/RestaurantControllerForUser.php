@@ -21,18 +21,21 @@ class RestaurantControllerForUser extends Controller
         $rating =  [];
         $ratingFormDB = Reviews::all();
         foreach ($restaurants as $valueRestaurant) {
-            $totalRating = 0;
+            $totalRating = 0; 
+            $Count = 1;
             foreach($ratingFormDB as $valueReview){
                 
                 if($valueRestaurant->id == $valueReview->Restaurant_id){
-                   
+                    
                     $totalRating += $valueReview->rating->Total_score;
+                        
                 }
-                
-            }
             $ratingCount = Reviews::all()->where('Restaurant_id',$valueReview->Restaurant_id);
-            array_push($rating ,$totalRating/count($ratingCount));
-        }
+            $Count =count($ratingCount);
+            };
+        
+           array_push($rating ,$totalRating/$Count);
+        };
         $data = [$restaurants,$rating];
         return view('user.showRestaurantForUser',compact('data'))
         ->with('i', (request()->input('page', 1) - 1) * 8);

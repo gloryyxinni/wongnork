@@ -10,6 +10,7 @@ use App\Models\Reviews;
 class Rating extends Model
 {
     use HasFactory;
+    
 
     public function review()
       {
