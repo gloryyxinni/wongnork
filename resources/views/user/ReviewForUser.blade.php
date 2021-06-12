@@ -52,6 +52,7 @@
                     </figure>
                 </div>
                 
+                
                   {{-- grid review --}}
                 <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
                     <form action="{{ route('ReviewForUser.store') }}" class="contact-form form-validate" method="POST"> 
@@ -60,13 +61,13 @@
                             <div class="col-sm-6 mb-3">
                                 <div class="form-group">
                                      <label for="rating-food">คะแนนอาหาร</label>
-                                     <fieldset class="rating" required>
+                                     <fieldset class="rating" >
                                         <legend>Please rate:</legend>
-                                        <input type="radio" id="rating-food5" name="ratingFood" value="5" /><label for="rating-food5" >5 stars</label>
-                                        <input type="radio" id="rating-food4" name="ratingFood" value="4" /><label for="rating-food4" >4 stars</label>
-                                        <input type="radio" id="rating-food3" name="ratingFood" value="3" /><label for="rating-food3" >3 stars</label>
-                                        <input type="radio" id="rating-food2" name="ratingFood" value="2" /><label for="rating-food2" >2 stars</label>
-                                        <input type="radio" id="rating-food1" name="ratingFood" value="1" /><label for="rating-food1" >1 star</label>
+                                        <input type="radio" id="rating-food5" name="ratingFood" value="5" required/><label for="rating-food5" >5 stars</label>
+                                        <input type="radio" id="rating-food4" name="ratingFood" value="4" required /><label for="rating-food4" >4 stars</label>
+                                        <input type="radio" id="rating-food3" name="ratingFood" value="3" required /><label for="rating-food3" >3 stars</label>
+                                        <input type="radio" id="rating-food2" name="ratingFood" value="2" required /><label for="rating-food2" >2 stars</label>
+                                        <input type="radio" id="rating-food1" name="ratingFood" value="1" required /><label for="rating-food1" >1 star</label>
                                     </fieldset>
                                 </div>
                             </div>
@@ -76,11 +77,11 @@
                                     <label for="rating-location">คะแนนสถานที่</label>
                                     <fieldset class="rating"  required>
                                         <legend>Please rate:</legend>
-                                        <input type="radio" id="rating-location5" name="ratingLocation" value="5" /><label for="rating-location5" >5 stars</label>
-                                        <input type="radio" id="rating-location4" name="ratingLocation" value="4" /><label for="rating-location4" >4 stars</label>
-                                        <input type="radio" id="rating-location3" name="ratingLocation" value="3" /><label for="rating-location3" >3 stars</label>
-                                        <input type="radio" id="rating-location2" name="ratingLocation" value="2" /><label for="rating-location2" >2 stars</label>
-                                        <input type="radio" id="rating-location1" name="ratingLocation" value="1" /><label for="rating-location1" >1 star</label>
+                                        <input type="radio" id="rating-location5" name="ratingLocation" value="5" required/><label for="rating-location5" >5 stars</label>
+                                        <input type="radio" id="rating-location4" name="ratingLocation" value="4" required/><label for="rating-location4" >4 stars</label>
+                                        <input type="radio" id="rating-location3" name="ratingLocation" value="3" required/><label for="rating-location3" >3 stars</label>
+                                        <input type="radio" id="rating-location2" name="ratingLocation" value="2" required/><label for="rating-location2" >2 stars</label>
+                                        <input type="radio" id="rating-location1" name="ratingLocation" value="1" required/><label for="rating-location1" >1 star</label>
                                     </fieldset>
                                 </div>
                             </div>
@@ -90,26 +91,37 @@
                                     <label for="rating-food">คะแนนการบริการ</label>
                                     <fieldset class="rating"  required>
                                         <legend>Please rate:</legend>
-                                        <input type="radio" id="rating-service5" name="ratingService" value="5" /><label for="rating-service5" >5 stars</label>
-                                        <input type="radio" id="rating-service4" name="ratingService" value="4" /><label for="rating-service4" >4 stars</label>
-                                        <input type="radio" id="rating-service3" name="ratingService" value="3" /><label for="rating-service3" >3 stars</label>
-                                        <input type="radio" id="rating-service2" name="ratingService" value="2" /><label for="rating-service2" >2 stars</label>
-                                        <input type="radio" id="rating-service1" name="ratingService" value="1" /><label for="rating-service1" >1 star</label>
+                                        <input type="radio" id="rating-service5" name="ratingService" value="5" required /><label for="rating-service5" >5 stars</label>
+                                        <input type="radio" id="rating-service4" name="ratingService" value="4" required/><label for="rating-service4" >4 stars</label>
+                                        <input type="radio" id="rating-service3" name="ratingService" value="3" required/><label for="rating-service3" >3 stars</label>
+                                        <input type="radio" id="rating-service2" name="ratingService" value="2" required/><label for="rating-service2" >2 stars</label>
+                                        <input type="radio" id="rating-service1" name="ratingService" value="1" required/><label for="rating-service1" >1 star</label>
                                     </fieldset>
                                 </div>
                             </div>
+
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <strong>Warning!</strong> Please check your input code<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
 
         
                             <div class="col-sm-12 mb-3">
                                 <div class="form-group">
                                     
-                                    <textarea class="form-control"  name="Recommend_menu" id="Recommend_menu" rows="4" placeholder="แนะนำเมนูโปรดของคุณ....."></textarea>
+                                    <textarea class="form-control"  name="Recommend_menu" id="Recommend_menu" rows="4" placeholder="แนะนำเมนูโปรดของคุณ....." required></textarea>
                                 </div>
                             </div>
                             <div class="col-sm-12 mb-3">
                               <div class="form-group">
-                                  {{-- <label class="required-field" for="message">เขียนรีวิวของคุณที่นี่</label> --}}
-                                  <textarea class="form-control" name="Detail" id="Detail" rows="4" placeholder="เขียนรีวิวของคุณที่นี่....."></textarea>
+                                  
+                                  <textarea class="form-control" name="Detail" id="Detail" rows="4" placeholder="เขียนรีวิวของคุณที่นี่....."required></textarea>
                               </div>
                           </div>
         
@@ -233,6 +245,7 @@
             top:2px;
             left:2px;
         }
+        
 
       </style>
         
